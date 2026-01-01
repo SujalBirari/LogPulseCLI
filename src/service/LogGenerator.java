@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Random;
 
 public class LogGenerator {
-    private static final int LOG_COUNT = 1000;
+    private static final int LOG_COUNT = 2_000_000;
     private static final String LOG_DIR = "logs";
     private static final String FILE_NAME = "server.log";
 
