@@ -9,7 +9,7 @@ void main() {
     LogsParser parser = new LogsParser();
     Map<String, Long> errorStats;
 
-    IO.println("Starting Analysis on " + FILE_PATH + "...");
+    System.out.println("Starting Analysis on " + FILE_PATH + "...");
 
     // this is a zero-memory stream for however GB of files
     try (Stream<String> lines = Files.lines(FILE_PATH)) {
@@ -50,7 +50,7 @@ public static void readReportInternal() {
     System.out.println("\n--- READING BINARY FILE ---");
 
     // 1. Open the binary file
-    try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("analysis_report.ser"))) {
+    try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("error_analysis_report.ser"))) {
 
         // 2. Read the raw bytes and convert them back to a Java Object
         LogReport loadedReport = (LogReport) in.readObject();
