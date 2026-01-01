@@ -107,4 +107,11 @@ public class LogAnalytics {
     // Map<String, Long> is not streamable
     // So .collect(...).entrySet() gives a Set -> Set<Map<String, Long>>
     // Map.Entry entry -> entry.getKey(), entry.getValue()
+
+    public static String getMostUnstableService(Map<String, Long> errorStats) {
+        return errorStats.entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey)
+                .orElse("No Errors Found!");
+    }
 }
